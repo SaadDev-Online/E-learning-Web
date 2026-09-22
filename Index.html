@@ -1,78 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Learning</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css"
-    rel="stylesheet"/>
-    <link rel="stylesheet" href="Style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E Learner — Learn Anything, Anywhere</title>
+<meta name="description" content="E Learner is an online school. Pick a course, learn at your own pace, and get a certificate when you finish.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.css" rel="stylesheet"/>
+<link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <nav>
-        <div class="nav__logo">
-            <div>E</div>
-            Learning
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo">
+      <span class="nav__logo-mark">E</span>
+      Learner
+    </a>
+
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <a href="#courses" class="btn btn--ghost">Log in</a>
+      <a href="#courses" class="btn btn--primary">Start learning</a>
+    </div>
+
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero__blob hero__blob--one" aria-hidden="true"></div>
+    <div class="hero__blob hero__blob--two" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <div class="hero__content">
+        <p class="eyebrow" data-reveal>Online courses for real life</p>
+        <h1 data-reveal>
+          <span class="line">One place to learn</span>
+          <span class="line">the skills you need.</span>
+        </h1>
+        <p class="hero__text" data-reveal>
+          E Learner brings courses, tutors, and practice work into one simple
+          platform. Study at work, at home, or on the move. Go slow or go
+          fast — the pace is always yours.
+        </p>
+
+        <form class="hero__search" action="/" data-reveal>
+          <div class="hero__search-field">
+            <i class="ri-search-line"></i>
+            <input type="text" placeholder="Try “graphic design”">
+          </div>
+          <div class="hero__search-divider"></div>
+          <div class="hero__search-field hero__search-field--select">
+            <i class="ri-compass-3-line"></i>
+            <input type="text" placeholder="Any subject">
+          </div>
+          <button type="submit" class="btn btn--primary">Search courses</button>
+        </form>
+
+        <p class="hero__note" data-reveal>
+          <i class="ri-checkbox-circle-fill"></i>
+          No card needed to start. Cancel any time.
+        </p>
+      </div>
+
+      <div class="hero__media" data-reveal>
+        <div class="hero__image-wrap">
+          <img src="Assets/header.jpg" alt="Three E Learner students smiling while studying online">
         </div>
-        <ul class="nav__socials">
-            <li>
-                <a href="#"><i class="ri-twitter-fill"></i></a>
-            </li>
-            <li>
-                <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-            </li>
-            <li>
-                <a href="#"><i class="ri-pinterest-line"></i></a>
-            </li>
-            <li>
-                <a href="#"><i class="ri-instagram-line"></i></a>
-            </li>
+        <div class="floaty floaty--top">
+          <i class="ri-graduation-cap-line"></i>
+          <div><strong>12,400+</strong><span>students learning now</span></div>
+        </div>
+        <div class="floaty floaty--bottom">
+          <i class="ri-star-fill"></i>
+          <div><strong>4.9 / 5</strong><span>average course rating</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS STRIP -->
+  <section class="stats" aria-label="E Learner in numbers">
+    <div class="stats__row">
+      <div class="stat" data-reveal>
+        <span class="stat__num" data-count="240">0</span><span class="stat__suffix">+</span>
+        <p>courses to choose from</p>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num" data-count="12400">0</span><span class="stat__suffix">+</span>
+        <p>students learning today</p>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num" data-count="98">0</span><span class="stat__suffix">%</span>
+        <p>would recommend a friend</p>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num" data-count="35">0</span><span class="stat__suffix">+</span>
+        <p>countries with students</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about__grid">
+      <div class="about__copy" data-reveal>
+        <p class="eyebrow">Why E Learner</p>
+        <h2>Learning that fits around your life, not the other way around.</h2>
+        <p>
+          Most people don't have three free hours a day to sit in a classroom.
+          So we didn't build a classroom. We built short lessons, real
+          projects, and tutors who answer when you're stuck — all in one app
+          you can open on a bus, a break, or late at night.
+        </p>
+        <ul class="about__points">
+          <li><i class="ri-time-line"></i> Learn in short sessions that fit a busy day</li>
+          <li><i class="ri-user-voice-line"></i> Ask a real tutor when a lesson gets hard</li>
+          <li><i class="ri-medal-line"></i> Walk away with work you can show an employer</li>
         </ul>
-        <div class="nav__contact">
-            <div class="nav__contact__card">
-                <span><i class="ri-whatsapp-line"></i></span>
-                <div>
-                    <p>Call Us</p>
-                    <h4>+92 344 9990829</h4>
-                </div>
-            </div>
-            <div class="nav__contact__card">
-                <span><i class="ri-mail-line"></i></span>
-                <div>
-                    <p>Email Us</p>
-                    <h4>info@elearnings.com</h4>
-                </div>
-            </div>
+        <a href="#courses" class="link-arrow">See what you can learn</a>
+      </div>
+
+      <div class="about__panel" data-reveal aria-hidden="true">
+        <div class="about__panel-glow"></div>
+        <div class="about__panel-card about__panel-card--a">
+          <i class="ri-play-circle-fill"></i>
+          <p>Lesson 4 of 12</p>
+          <div class="about__bar"><span style="width:64%"></span></div>
         </div>
-    </nav>
-    <header class="header__container">
-        <div class="header__image">
-            <img src="Assets/header.jpg" alt="header">
+        <div class="about__panel-card about__panel-card--b">
+          <i class="ri-chat-3-fill"></i>
+          <p>“Explain closures again?”</p>
         </div>
-            <div class="header__content">
-                <h1>Single Platform For All Your <span>Learning</span> Needs</h1>
-                <p>Whether you're seeking to enhance your professional skills, explore
-                   new hobbies, or pursue academic interests, our comprehensive platform
-                   offers diverse courses and resources tailored to support your lifelong
-                   learning journey.
-                </p>
-                <form action="/">
-                    <div class="input__row">
-                        <div class="input__group">
-                            <span><i class="ri-search-line"></i></span>
-                            <input type="text" placeholder="Search for Course" />
-                        </div>
-                        <div class="input__group">
-                            <span><i class="ri-arrow-down-s-line"></i></span>
-                            <input type="text" placeholder="Courses" />
-                        </div>
-                    </div>
-                    <button type="submit">Search Now</button>
-                </form>
-            </div>
-    </header>
-    
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="Script.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="courses" id="courses">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>Popular right now</p>
+      <h2 data-reveal>Pick a course and start today</h2>
+      <p class="section-head__sub" data-reveal>
+        Every course is broken into short lessons with real practice work,
+        so you always know what to do next.
+      </p>
+    </div>
+
+    <div class="course-grid">
+      <article class="course" data-reveal style="--accent:#3652FF">
+        <div class="course__icon"><i class="ri-code-s-slash-line"></i></div>
+        <h3>Web Development</h3>
+        <p>Build real websites with HTML, CSS, and JavaScript, one small project at a time.</p>
+        <div class="course__meta"><span><i class="ri-play-circle-line"></i> 86 lessons</span><span><i class="ri-signal-tower-line"></i> Beginner</span></div>
+      </article>
+
+      <article class="course" data-reveal style="--accent:#FFB648">
+        <div class="course__icon"><i class="ri-bar-chart-2-line"></i></div>
+        <h3>Data & Analytics</h3>
+        <p>Learn to read numbers, build charts, and tell a clear story with data.</p>
+        <div class="course__meta"><span><i class="ri-play-circle-line"></i> 64 lessons</span><span><i class="ri-signal-tower-line"></i> Beginner</span></div>
+      </article>
+
+      <article class="course" data-reveal style="--accent:#FF6E6E">
+        <div class="course__icon"><i class="ri-palette-line"></i></div>
+        <h3>Graphic Design</h3>
+        <p>Learn layout, colour, and type, then design real posters and logos.</p>
+        <div class="course__meta"><span><i class="ri-play-circle-line"></i> 52 lessons</span><span><i class="ri-signal-tower-line"></i> All levels</span></div>
+      </article>
+
+      <article class="course" data-reveal style="--accent:#2FC0A6">
+        <div class="course__icon"><i class="ri-megaphone-line"></i></div>
+        <h3>Digital Marketing</h3>
+        <p>Plan a social media page, write ads that work, and read your results.</p>
+        <div class="course__meta"><span><i class="ri-play-circle-line"></i> 45 lessons</span><span><i class="ri-signal-tower-line"></i> Beginner</span></div>
+      </article>
+
+      <article class="course" data-reveal style="--accent:#8C6CFF">
+        <div class="course__icon"><i class="ri-briefcase-4-line"></i></div>
+        <h3>Business Basics</h3>
+        <p>Understand budgets, teams, and simple plans you can use at work.</p>
+        <div class="course__meta"><span><i class="ri-play-circle-line"></i> 38 lessons</span><span><i class="ri-signal-tower-line"></i> All levels</span></div>
+      </article>
+
+      <article class="course" data-reveal style="--accent:#3652FF">
+        <div class="course__icon"><i class="ri-translate-2"></i></div>
+        <h3>English Language</h3>
+        <p>Speak and write with more confidence, with lessons for daily life and work.</p>
+        <div class="course__meta"><span><i class="ri-play-circle-line"></i> 70 lessons</span><span><i class="ri-signal-tower-line"></i> Beginner</span></div>
+      </article>
+    </div>
+
+    <a href="#" class="btn btn--outline course-grid__more" data-reveal>View all 240+ courses</a>
+  </section>
+
+  <!-- WHY CHOOSE US (zig-zag) -->
+  <section class="features" id="features">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>What makes it different</p>
+      <h2 data-reveal>Built for people who learn on their own time</h2>
+    </div>
+
+    <div class="feature-row" data-reveal>
+      <div class="feature-row__text">
+        <span class="feature-row__icon"><i class="ri-timer-flash-line"></i></span>
+        <h3>Lessons that respect your time</h3>
+        <p>Most lessons take ten to fifteen minutes. Finish one on a coffee break, or stack a few together on a slow Sunday. You choose the pace, and your progress is saved the moment you stop.</p>
+      </div>
+      <div class="feature-row__visual" style="--from:#3652FF; --to:#8C6CFF">
+        <i class="ri-timer-flash-line"></i>
+      </div>
+    </div>
+
+    <div class="feature-row feature-row--reverse" data-reveal>
+      <div class="feature-row__text">
+        <span class="feature-row__icon"><i class="ri-user-voice-line"></i></span>
+        <h3>Real tutors, not just videos</h3>
+        <p>Every course comes with a tutor you can message. Stuck on a step? Ask a question and get a real answer, usually within a day, not a week.</p>
+      </div>
+      <div class="feature-row__visual" style="--from:#FFB648; --to:#FF6E6E">
+        <i class="ri-user-voice-line"></i>
+      </div>
+    </div>
+
+    <div class="feature-row" data-reveal>
+      <div class="feature-row__text">
+        <span class="feature-row__icon"><i class="ri-verified-badge-line"></i></span>
+        <h3>A certificate you can actually show</h3>
+        <p>When you finish a course, you get a certificate with your name and the skills you learned. Add it to your CV or share it on LinkedIn in one click.</p>
+      </div>
+      <div class="feature-row__visual" style="--from:#2FC0A6; --to:#3652FF">
+        <i class="ri-verified-badge-line"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>Getting started</p>
+      <h2 data-reveal>Four steps and you're learning</h2>
+    </div>
+
+    <ol class="steps">
+      <li class="step" data-reveal>
+        <span class="step__num">1</span>
+        <h3>Create your free account</h3>
+        <p>Sign up with your email in under a minute. No payment details needed.</p>
+      </li>
+      <li class="step" data-reveal>
+        <span class="step__num">2</span>
+        <h3>Pick a course you're curious about</h3>
+        <p>Browse by subject or search for a skill. Preview the first lesson for free.</p>
+      </li>
+      <li class="step" data-reveal>
+        <span class="step__num">3</span>
+        <h3>Learn a little, most days</h3>
+        <p>Watch short lessons, try small tasks, and ask your tutor when you're stuck.</p>
+      </li>
+      <li class="step" data-reveal>
+        <span class="step__num">4</span>
+        <h3>Finish and get your certificate</h3>
+        <p>Complete the final project and download a certificate to show your work.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="reviews" id="reviews">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>From our students</p>
+      <h2 data-reveal>People who learned something new</h2>
+    </div>
+
+    <div class="review-slider" data-reveal>
+      <button class="review-slider__arrow review-slider__arrow--prev" id="reviewPrev" aria-label="Previous review"><i class="ri-arrow-left-s-line"></i></button>
+
+      <div class="review-slider__track" id="reviewTrack">
+        <blockquote class="review is-active">
+          <i class="ri-double-quotes-l"></i>
+          <p>I tried three other apps before this one. E Learner is the first place I actually finished a course, because the lessons are short enough to fit into my day.</p>
+          <footer><strong>Hana Yusuf</strong><span>Web Development student</span></footer>
+        </blockquote>
+        <blockquote class="review">
+          <i class="ri-double-quotes-l"></i>
+          <p>My tutor answered a question at eleven at night and it still felt personal, not automatic. That's rare, and it's why I kept going back.</p>
+          <footer><strong>Omar Siddiqui</strong><span>Digital Marketing student</span></footer>
+        </blockquote>
+        <blockquote class="review">
+          <i class="ri-double-quotes-l"></i>
+          <p>I used my certificate in a job interview last month and the manager asked about the final project by name. That felt like proof it was worth something.</p>
+          <footer><strong>Lin Chen</strong><span>Graphic Design student</span></footer>
+        </blockquote>
+      </div>
+
+      <button class="review-slider__arrow review-slider__arrow--next" id="reviewNext" aria-label="Next review"><i class="ri-arrow-right-s-line"></i></button>
+    </div>
+
+    <div class="review-dots" id="reviewDots">
+      <button class="is-active" data-index="0" aria-label="Show review 1"></button>
+      <button data-index="1" aria-label="Show review 2"></button>
+      <button data-index="2" aria-label="Show review 3"></button>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" data-reveal>
+    <div class="cta__glow" aria-hidden="true"></div>
+    <h2>Your next skill is one lesson away.</h2>
+    <p>Start today for free. No card, no risk — just your first lesson, on us.</p>
+    <a href="#courses" class="btn btn--light">Start learning free</a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <a href="#top" class="nav__logo">
+        <span class="nav__logo-mark">E</span>
+        Learner
+      </a>
+      <p>A simple place to learn a new skill, one short lesson at a time.</p>
+      <div class="footer__socials">
+        <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+        <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a>
+        <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h4>Learn</h4>
+      <a href="#courses">All courses</a>
+      <a href="#how">How it works</a>
+      <a href="#reviews">Student reviews</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Company</h4>
+      <a href="#about">About us</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div class="footer__col footer__col--newsletter">
+      <h4>Get a free lesson every week</h4>
+      <form class="footer__newsletter" action="/">
+        <input type="email" placeholder="you@email.com" required>
+        <button type="submit" aria-label="Subscribe"><i class="ri-arrow-right-line"></i></button>
+      </form>
+      <div class="footer__contact">
+        <p><i class="ri-whatsapp-line"></i> +92 344 9990829</p>
+        <p><i class="ri-mail-line"></i> info@elearnings.com</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p>&copy; <span id="year"></span> E Learner. All rights reserved.</p>
+    <div class="footer__legal">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
+
+<script src="Script.js"></script>
 </body>
 </html>
